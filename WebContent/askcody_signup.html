@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+
+<title> AskCody - SignUp </title>
+
+<link rel="stylesheet" href="./css/askcody1.css">
+
+<script>
+
+const log = console.log;
+let xdata;
+
+$(()=>{
+	
+	$('#id_check').click(function(){
+		idcheck();		
+	});
+});
+
+function idcheck(){
+	
+	$.ajax({
+		url: './json/id_check.jsp',
+		dataType: 'json',
+		data: {
+			id:$('#id').val()
+		},
+		success: function(data){
+			if(data.id == undefined){
+				$('#msg1').html('사용 가능한 ID 입니다.')
+			} else {
+				$('#msg1').html('사용중인 ID 입니다.')				
+			}
+		},
+		error: function(e){
+			alert("Error "+e);
+		}	
+	});
+}
+
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+</style>
+
+<style>
+
+* {
+	font-family: verdana, 돋움;
+}
+
+.error {
+	color: rgb(190, 086, 097);
+}
+
+#signuptitle {
+	color: rgb(070, 093, 114);
+	font-weight: bold;
+	text-align: center;
+}
+
+#signup {
+	padding: 10px;
+	margin: 10px;
+}
+
+table {
+	position: relative;
+	left: 20px;
+	border-collapse: collapse;
+}
+
+table td{
+	padding: 5px 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="users">
+	<span><a href="askcody_index.html" class="reg"> HOME </a></span> 
+</div>
+
+<div id="logo">
+	<a href="askcody_index.html">
+		<img src="./img/logo.png" alt="로고">
+	</a>
+</div>
+
+<div id="dropdown">
+	<ul>
+		<li><a href="#" class="menu"> OOTD </a>
+			<ul>
+				<li><a href="askcody_galleria.html"> Gallery </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> SELECT </a>
+			<ul>
+				<li><a href="askcody_choice.html"> Choice </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> BOARD </a>
+			<ul>
+				<li><a href="#"> Notice </a></li>
+				<li><a href="askcody_event.html"> Event </a></li>
+				<li><a href="#"> FreeBoard </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> ASKCODY </a>
+			<ul>
+				<li><a href="askcody_about.html"> About </a></li>
+				<li><a href="askcody_growth.html"> Growth </a></li>
+				<li><a href="askcody_location.html"> Location </a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br/>
+<br/>
+
+<hr noshade/>
+
+<h3 id="signuptitle"> 회&nbsp;원&nbsp;가&nbsp;입&nbsp;양&nbsp;식 </h3>
+
+<form action="signupcomplete.jsp" method="get">
+
+<div id="signup">
+
+	<table border="1">
+		<tr>
+			<td><label for = "id">아이디</label></td>
+			<td>
+				<input type="text" id="id" name="id" value=""/>
+				<input type="button" value="ID중복체크" id="id_check"><br/>
+				<span id="msg1" class="error"></span>
+			</td>
+		</tr>
+		<tr>
+			<td><label for = "pw">비밀번호</label></td>
+			<td><input type="password" id="pw" name="pw" value=""/><br/></td>
+		</tr>
+		<tr>
+			<td><label for = "name">이름</label></td>
+			<td><input type="text" id="name" name="name" value=""/><br/></td>
+		</tr>		
+		<tr>
+			<td><label for = "role">회원등급</label></td>
+			<td>
+			<!-- 원하는 데이터가 안들어오니 제약조건을 고르는 것, select. yes or yes. -->
+			<select id = "role" name="role">
+				<option value="일반인"> 일반인 </option>
+				<option value="관리자"> 관리자 </option>
+			</select>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="작성완료" />
+				<input type="reset" value="초기화" />
+
+			</td>
+		</tr>
+	</table>
+	
+</div>
+</form>
+
+<div class="info">
+	<p>
+		A&nbsp;&nbsp;s&nbsp;&nbsp;k&nbsp;&nbsp;C&nbsp;&nbsp;o&nbsp;&nbsp;d&nbsp;&nbsp;y
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<h3 class="create"> Created by </h3>
+	<p class="createinfo"> 
+		Eunseok Shin<br> 
+		jakeshin89@gmail.com<br>
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<p class="tel"><a href="tel:010-1234-5678"> 010.1234.5678 </a></p>
+	<address> 주소 : 서울특별시 강남구 역삼동 </address>
+</div>
+
+<p class="copy"> Copyright(c)2019 Style Sanda All Rights Reserved. </p>
+
+</body>
+</html>

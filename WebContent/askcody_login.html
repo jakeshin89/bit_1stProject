@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<title> AskCody - Login </title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap&subset=korean');
+</style>
+
+<link rel="stylesheet" href="./css/askcody1.css">
+
+<style>
+
+h2 {
+	text-align: center;
+}
+
+table {
+	position: relative;
+	left: 35%;
+	border-collapse: collapse;
+}
+
+table td{
+	padding: 5px 10px;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div id="users">
+	<span><a href="askcody_login.html" class="reg"> LOGIN </a></span> 
+	<span><a href="askcody_signup.html" class="reg"> SIGN UP </a></span>
+</div>
+
+<div id="logo">
+	<a href="askcody_index.html">
+		<img src="./img/logo.png" alt="로고">
+	</a>
+</div>
+
+<div id="dropdown">
+	<ul>
+		<li><a href="#" class="menu"> OOTD </a>
+			<ul>
+				<li><a href="askcody_galleria.html"> Gallery </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> SELECT </a>
+			<ul>
+				<li><a href="#"> Choice </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> BOARD </a>
+			<ul>
+				<li><a href="#"> Notice </a></li>
+				<li><a href="askcody_event.html"> Event </a></li>
+				<li><a href="#"> FreeBoard </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> ASKCODY </a>
+			<ul>
+				<li><a href="askcody_about.html"> About </a></li>
+				<li><a href="askcody_growth.html"> Growth </a></li>
+				<li><a href="askcody_location.html"> Location </a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br/>
+<br/>
+
+<hr noshade/>
+
+<!-- 여기서부터 달라질 body -->
+
+<br/>
+
+<h2> LOGIN </h2>
+
+
+<form action="login.jsp" method="get">
+
+	<table border="1">
+		<tr>
+			<td><label for="id">ID </label></td>
+			<td><input type="text" id="id" name="id" value=""/></td>
+		</tr>
+		<tr>
+			<td><label for="pw">PW</label></td>
+			<td><input type="password" id="pw" name="pw" value=""/></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="로그인">
+				<input type="reset" value="취소">
+				<a href="askcody_signup.html"> 회원가입 </a>
+			</td>
+		</tr>	
+	</table>
+
+</form>
+
+<br/><br/><br/>
+
+<!-- 여기까지 달라질 body -->
+
+<div class="info">
+	<p>
+		A&nbsp;&nbsp;s&nbsp;&nbsp;k&nbsp;&nbsp;C&nbsp;&nbsp;o&nbsp;&nbsp;d&nbsp;&nbsp;y
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<h3 class="create"> Created by </h3>
+	<p class="createinfo"> 
+		Eunseok Shin<br> 
+		jakeshin89@gmail.com<br>
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<p class="tel"><a href="tel:010-1234-5678"> 010.1234.5678 </a></p>
+	<address> 주소 : 서울특별시 강남구 역삼동 </address>
+</div>
+
+<p class="copy"> Copyright(c)2019 Style Sanda All Rights Reserved. </p>
+
+</body>
+</html>

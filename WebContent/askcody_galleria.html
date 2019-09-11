@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<title> AskCody - Gallery </title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+</style>
+
+<link rel="stylesheet" href="./css/askcody1.css">
+
+<script>
+
+const log = console.log;
+
+let gallery = [
+	"./img/cody1.jpg",
+	"./img/cody2.jpg",
+	"./img/cody3.jpg",
+	"./img/cody4.jpg",	
+];
+
+window.onload=function(){
+	let img1 = document.querySelector("#img");
+	img1.src = gallery[0];
+};
+
+let num = 0;
+function forward(){
+	++num;
+	if(num == 4) num = 0;
+	document.querySelector("#img").src = gallery[num];	
+}
+
+let bnum = 4;
+function backward(){
+	--bnum;
+	if(bnum == -1) bnum = 3;
+	document.getElementById("img").src = gallery[bnum];	
+}
+
+</script>
+
+<style>
+
+#maintitle {
+	text-align: center;
+	font-size: xx-large;
+	letter-spacing: 2px;
+	font-family: verdana, 돋움;
+	color: rgb(070, 093, 114);
+}
+
+.gallery {
+	text-align: center;
+}
+
+#back {
+	position: relative;
+	bottom: 150px;
+}
+
+#for {
+	position: relative;
+	bottom: 150px;
+}
+
+#img {
+	width: 510px;
+	height: 340px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="users">
+	<span><a href="askcody_login.html" class="reg"> LOGIN </a></span> 
+	<span><a href="askcody_signup.html" class="reg"> SIGN UP </a></span>
+</div>
+
+<div id="logo">
+	<a href="askcody_index.html">
+		<img src="./img/logo.png" alt="로고">
+	</a>
+</div>
+
+<div id="dropdown">
+	<ul>
+		<li><a href="#" class="menu"> OOTD </a>
+			<ul>
+				<li><a href="askcody_galleria.html"> Gallery </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> SELECT </a>
+			<ul>
+				<li><a href="askcody_choice.html"> Choice </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> BOARD </a>
+			<ul>
+				<li><a href="#"> Notice </a></li>
+				<li><a href="askcody_event.html"> Event </a></li>
+				<li><a href="#"> FreeBoard </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> ASKCODY </a>
+			<ul>
+				<li><a href="askcody_about.html"> About </a></li>
+				<li><a href="askcody_growth.html"> Growth </a></li>
+				<li><a href="askcody_location.html"> Location </a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br/>
+<br/>
+
+<hr noshade/>
+
+<!-- 여기서부터 달라질 body -->
+
+<h3 id="maintitle"> Gallery </h3>
+
+<div class="gallery">
+	<button id="back" onclick="backward()">◀</button>
+	<span> <img id="img" name="img" alt="" src=""> </span>
+	<button id="for" onclick="forward()">▶</button>
+</div>
+
+<br/><br/>
+
+<!-- 여기까지 달라질 body -->
+
+<div class="info">
+	<p>
+		A&nbsp;&nbsp;s&nbsp;&nbsp;k&nbsp;&nbsp;C&nbsp;&nbsp;o&nbsp;&nbsp;d&nbsp;&nbsp;y
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<h3 class="create"> Created by </h3>
+	<p class="createinfo"> 
+		Eunseok Shin<br> 
+		jakeshin89@gmail.com<br>
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<p class="tel"><a href="tel:010-1234-5678"> 010.1234.5678 </a></p>
+	<address> 주소 : 서울특별시 강남구 역삼동 </address>
+</div>
+
+<p class="copy"> Copyright(c)2019 Style Sanda All Rights Reserved. </p>
+
+</body>
+</html>

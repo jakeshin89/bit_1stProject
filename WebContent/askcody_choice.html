@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<title> AskCody - Choice, Drag Your Style </title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap&subset=korean');
+</style>
+
+<link rel="stylesheet" href="./css/askcody1.css">
+
+<style>
+
+#shopping_cart {
+	width: 90%;
+	height: 400px;
+	border: 1px dotted black;
+	margin: 10px auto;
+}
+
+h2 {
+	color: rgb(070, 093, 114);
+	text-align: center;
+}
+
+.exp {
+	border: none;
+	color: rgb(070, 093, 114);
+	align-content: center;
+	text-align: center;
+}
+
+.imgs {
+	align-content: center;
+	text-align: center;
+}
+
+</style>
+  
+<script>
+
+function allowDrop(e){
+	e.preventDefault();
+}
+
+function handleDragStart(e){
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData("Text", e.target.id);
+}
+
+function handleDrop(e){
+	e.preventDefault();
+	var src = e.dataTransfer.getData("Text");
+	e.target.appendChild(document.getElementById(src));
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="users">
+	<span><a href="askcody_login.html" class="reg"> LOGIN </a></span> 
+	<span><a href="askcody_signup.html" class="reg"> SIGN UP </a></span>
+</div>
+
+<div id="logo">
+	<a href="askcody_index.html">
+		<img src="./img/logo.png" alt="로고">
+	</a>
+</div>
+
+<div id="dropdown">
+	<ul>
+		<li><a href="#" class="menu"> OOTD </a>
+			<ul>
+				<li><a href="askcody_galleria.html"> Gallery </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> SELECT </a>
+			<ul>
+				<li><a href="askcody_choice.html"> Choice </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> BOARD </a>
+			<ul>
+				<li><a href="#"> Notice </a></li>
+				<li><a href="askcody_event.html"> Event </a></li>
+				<li><a href="#"> FreeBoard </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> ASKCODY </a>
+			<ul>
+				<li><a href="askcody_about.html"> About </a></li>
+				<li><a href="askcody_growth.html"> Growth </a></li>
+				<li><a href="askcody_location.html"> Location </a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br/>
+<br/>
+
+<hr noshade/>
+
+<!-- 여기서부터 달라질 body -->
+<br/>
+
+<h2 class="title"> CHOICE </h2>
+
+<div class="exp"> Drag Jackets You Like to CODY </div>
+
+<br/><br/>
+
+<div id="shopping_cart" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+</div>
+<br/><br/>
+
+<div class="imgs">
+	<img id="img1" src="./img/capt.jpg" draggable="true" ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img2" src="./img/jean.jpg" draggable="true" ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img3" src="./img/nike.jpg" draggable="true" ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img4" src="./img/rider.jpg" draggable="true" ondragstart="handleDragStart(event)" width="150" height="100">
+</div>
+
+<br/><br/><br/>
+
+<!-- 여기까지 달라질 body -->
+
+<div class="info">
+	<p>
+		A&nbsp;&nbsp;s&nbsp;&nbsp;k&nbsp;&nbsp;C&nbsp;&nbsp;o&nbsp;&nbsp;d&nbsp;&nbsp;y
+	</p>
+</div>
+
+<script>
+
+if(!localStorage.count) localStorage.count = 0;
+localStorage.count = parseInt(localStorage.count) + 1;
+
+$('#count').html(localStorage.count+"번째 방문자입니다.");
+
+</script>
+
+<hr noshade/>
+
+<div class="info">
+	<h3 class="create"> Created by </h3>
+	<p class="createinfo"> 
+		Eunseok Shin<br> 
+		jakeshin89@gmail.com<br>
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<p class="tel"><a href="tel:010-1234-5678"> 010.1234.5678 </a></p>
+	<address> 주소 : 서울특별시 강남구 역삼동 </address>
+</div>
+
+<p class="copy"> Copyright(c)2019 Style Sanda All Rights Reserved. </p>
+
+</body>
+</html>

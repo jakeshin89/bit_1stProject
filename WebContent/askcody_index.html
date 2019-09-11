@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<title> Welcome AskCody </title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap&subset=korean');
+</style>
+
+<link rel="stylesheet" href="./css/askcody1.css">
+
+<style>
+#count {
+	text-align: center;
+	align-self: center;
+	color: rgb(043, 063, 107);
+	font-size: 13px;
+	font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="users">
+	<span><a href="askcody_login.html" class="reg"> LOGIN </a></span> 
+	<span><a href="askcody_signup.html" class="reg"> SIGN UP </a></span>
+</div>
+
+<div id="logo">
+	<a href="askcody_index.html">
+		<img src="./img/logo.png" alt="로고">
+	</a>
+</div>
+
+<div id="dropdown">
+	<ul>
+		<li><a href="#" class="menu"> OOTD </a>
+			<ul>
+				<li><a href="askcody_galleria.html"> Gallery </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> SELECT </a>
+			<ul>
+				<li><a href="askcody_choice.html"> Choice </a></li>
+				<li><a href="#"> submenu2 </a></li>
+				<li><a href="#"> submenu3 </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> BOARD </a>
+			<ul>
+				<li><a href="#"> Notice </a></li>
+				<li><a href="askcody_event.html"> Event </a></li>
+				<li><a href="#"> FreeBoard </a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="menu"> ASKCODY </a>
+			<ul>
+				<li><a href="askcody_about.html"> About </a></li>
+				<li><a href="askcody_growth.html"> Growth </a></li>
+				<li><a href="askcody_location.html"> Location </a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br/>
+<br/>
+
+<hr noshade/>
+
+<!-- 여기서부터 달라질 body -->
+
+<br/>
+<div class="center">
+	<img src="./img/main.jpg" alt="메인" class="main">
+<br/><br/>		
+	<h2> Get Your Style </h2>
+	
+	<ul class="newul">
+		<li>
+			<a href="#">
+				<img src="./img//main1.gif" alt="새로운상품" class="submain">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="./img//main2.gif" alt="새로운상품" class="submain">
+			</a>
+		</li>
+	</ul>
+</div>
+
+<!-- 여기까지 달라질 body -->
+
+<div class="info">
+	<p>
+		A&nbsp;&nbsp;s&nbsp;&nbsp;k&nbsp;&nbsp;C&nbsp;&nbsp;o&nbsp;&nbsp;d&nbsp;&nbsp;y
+	</p>
+</div>
+
+<br/>
+<div id="count"></div>
+<br/>
+
+<script>
+
+if(!localStorage.count) localStorage.count = 0;
+localStorage.count = parseInt(localStorage.count) + 1;
+
+$('#count').html(localStorage.count+"번째 방문자입니다.");
+
+</script>
+
+<hr noshade/>
+
+<div class="info">
+	<h3 class="create"> Created by </h3>
+	<p class="createinfo"> 
+		Eunseok Shin<br> 
+		jakeshin89@gmail.com<br>
+	</p>
+</div>
+
+<hr noshade/>
+
+<div class="info">
+	<p class="tel"><a href="tel:010-1234-5678"> 010.1234.5678 </a></p>
+	<address> 주소 : 서울특별시 강남구 역삼동 </address>
+</div>
+
+<p class="copy"> Copyright(c)2019 Style Sanda All Rights Reserved. </p>
+
+</body>
+</html>
